@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Two way binding using plain Javascript</title>
+</head>
+<body>
+  <input type='text' id='inputId'/>
+  <h1 id='h1Id'></h1>
+  <script>
+	var obj = {};
+
+	var inputId = document.getElementById('inputId');
+	var h1Id = document.getElementById('h1Id');
+
+	Object.defineProperty(obj, 'name', {
+
+	  get : function(){
+		return inputId.value;
+	  },
+	  set: function(newname){
+		inputId.value = newname;
+		h1Id.innerHTML = newname; 
+	  }
+	  
+	});
+
+
+	inputId.addEventListener('keydown', function(){
+	  h1Id.innerHTML = inputId.value;
+	  obj.name = inputId.value;
+	});
+
+  </script>
+</body>
+</html>
