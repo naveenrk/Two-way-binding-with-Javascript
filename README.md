@@ -1,2 +1,2 @@
-# Two-way-binding-with-Javscript
+# Two-way-binding-with-Javascript
 Two way binding using plain Javascript
